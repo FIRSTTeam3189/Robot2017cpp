@@ -7,20 +7,12 @@
 class OI {
 public:
 	OI();
-	frc::Joystick* GetJoystick();
+	double GetLeftY();
+	double GetRightY();
 
 private:
-	frc::Joystick joy { 0 };
-
-	// Create some buttons
-	frc::JoystickButton d_up { &joy, 5 };
-	frc::JoystickButton d_right { &joy, 6 };
-	frc::JoystickButton d_down { &joy, 7 };
-	frc::JoystickButton d_left { &joy, 8 };
-	frc::JoystickButton l2 { &joy, 9 };
-	frc::JoystickButton r2 { &joy, 10 };
-	frc::JoystickButton l1 { &joy, 11 };
-	frc::JoystickButton r1 { &joy, 12 };
+	frc::Joystick left { 0 };
+	frc::Joystick right { 1 };
 };
 
 #endif  // OI_H_

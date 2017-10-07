@@ -10,10 +10,6 @@
 #include <TalonSRX.h>
 #include "RobotMap.h"
 
-namespace frc {
-class Joystick;
-}
-
 /**
  * The DriveTrain subsystem incorporates the sensors and actuators attached to
  * the robots chassis. These include four drive motors, a left and right encoder

@@ -14,14 +14,9 @@ void CloseClaw::Initialize() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool CloseClaw::IsFinished() {
-	return Robot::claw->IsGripping();
+	return true;
 }
 
 // Called once after isFinished returns true
 void CloseClaw::End() {
-	// NOTE: Doesn't stop in simulation due to lower friction causing the can to fall out
-	// + there is no need to worry about stalling the motor or crushing the can.
-#ifndef SIMULATION
-	Robot::claw->Stop();
-#endif
 }

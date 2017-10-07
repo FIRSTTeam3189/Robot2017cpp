@@ -5,7 +5,6 @@
 OpenClaw::OpenClaw() :
 		frc::Command("OpenClaw") {
 	Requires(Robot::claw.get());
-	SetTimeout(1);
 }
 
 // Called just before this Command runs the first time
@@ -15,10 +14,10 @@ void OpenClaw::Initialize() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool OpenClaw::IsFinished() {
-	return IsTimedOut();
+	return true;
 }
 
 // Called once after isFinished returns true
 void OpenClaw::End() {
-	Robot::claw->Stop();
+
 }

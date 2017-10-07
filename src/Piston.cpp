@@ -17,9 +17,10 @@ void Piston::Retract(){
 	retracted->Set(true);
 }
 
-void Piston::Toggle(){
+bool Piston::Toggle(){
 	extended->Set(!extended->Get());
 	retracted->Set(!extended->Get());
+	return extended->Get();
 }
 
 bool Piston::IsExtended(){

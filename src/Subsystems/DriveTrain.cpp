@@ -6,7 +6,10 @@
 #include "Commands/TankDriveWithJoystick.h"
 
 DriveTrain::DriveTrain() :
-		frc::Subsystem("DriveTrain") {
+	frc::Subsystem("DriveTrain") {
+	frontLeft.SetInverted(true);
+	middleLeft.SetInverted(true);
+	rearLeft.SetInverted(true);
 }
 
 /**
@@ -36,11 +39,11 @@ void DriveTrain::Drive(double left, double right) {
 
 void DriveTrain::Stop(){
 	frontLeft.Set(0.0);
-		middleLeft.Set(0.0);
-		rearLeft.Set(0.0);
-		frontRight.Set(0.0);
-		middleRight.Set(0.0);
-		rearRight.Set(0.0);
+	middleLeft.Set(0.0);
+	rearLeft.Set(0.0);
+	frontRight.Set(0.0);
+	middleRight.Set(0.0);
+	rearRight.Set(0.0);
 }
 
 //NOT INMPLEMENTED

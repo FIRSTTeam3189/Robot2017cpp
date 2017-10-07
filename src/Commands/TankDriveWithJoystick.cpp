@@ -9,7 +9,7 @@ TankDriveWithJoystick::TankDriveWithJoystick() :
 
 // Called repeatedly when this Command is scheduled to run
 void TankDriveWithJoystick::Execute() {
-	Robot::drivetrain->Drive(Robot::oi->GetJoystick());
+	//Robot::drivetrain->Drive(Robot::oi);
 }
 
 // Make this return true when this Command no longer needs to run execute()
