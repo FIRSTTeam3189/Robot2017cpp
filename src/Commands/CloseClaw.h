@@ -1,13 +1,13 @@
 #ifndef CloseClaw_H
 #define CloseClaw_H
 
-#include <Commands/Command.h>
+#include <CommandBase.h>
 
 /**
  * Opens the claw for one second. Real robots should use sensors, stalling
  * motors is BAD!
  */
-class CloseClaw: public frc::Command {
+class CloseClaw: public CommandBase {
 public:
 	CloseClaw();
 	void Initialize() override;

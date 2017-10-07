@@ -1,33 +1,58 @@
-#ifndef ROBOT_H_
-#define ROBOT_H_
-
+#ifndef ROBOT_H
+#define ROBOT_H
 #include <memory>
 
 #include <Commands/Command.h>
+#include <Commands/Scheduler.h>
 #include <IterativeRobot.h>
 #include <LiveWindow/LiveWindow.h>
+#include <SmartDashboard/SendableChooser.h>
+#include <SmartDashboard/SmartDashboard.h>
 
 #include "Commands/Autonomous.h"
 #include "OI.h"
-#include "Subsystems/Claw.h"
-#include "Subsystems/DriveTrain.h"
+#include "Subsystems/Drivetrain.h"
+#include "Subsystems/Winch.h"
 
 class Robot: public frc::IterativeRobot {
 public:
-	static std::shared_ptr<DriveTrain> drivetrain;
-	static std::shared_ptr<Claw> claw;
-	static std::unique_ptr<OI> oi;
+	void RobotInit() override;
+
+	/**
+	 * This function is called once each time the robot enters Disabled mode.
+	 * You can use it to reset any subsystem information you want to clear when
+	 * the robot is disabled.
+	 */
+	void DisabledInit() override;
+
+	void DisabledPeriodic();
+
+	/**
+	 * This autonomous (along with the chooser code above) shows how to select
+	 * between different autonomous modes using the dashboard. The sendable
+	 * chooser code works with the Java SmartDashboard. If you prefer the
+	 * LabVIEW Dashboard, remove all of the chooser code and uncomment the
+	 * GetString code to get the auto name from the text box below the Gyro.
+	 *
+	 * You can add additional auto modes by adding additional commands to the
+	 * chooser code above (like the commented example) or additional comparisons
+	 * to the if-else structure below with additional strings & commands.
+	 */
+	void AutonomousInit();
+
+	void AutonomousPeriodic();
+
+	void TeleopInit();
+
+	void TeleopPeriodic();
+
+	void TestPeriodic();
 
 private:
-	Autonomous autonomousCommand;
-	frc::LiveWindow* lw = frc::LiveWindow::GetInstance();
+	std::unique_ptr<frc::Command> autonomousCommand;
+	frc::SendableChooser<frc::Command*> chooser;
 
-	void RobotInit() override;
-	void AutonomousInit() override;
-	void AutonomousPeriodic() override;
-	void TeleopInit() override;
-	void TeleopPeriodic() override;
-	void TestPeriodic() override;
+
 };
 
-#endif  // ROBOT_H_
+#endif //ROBOT_H

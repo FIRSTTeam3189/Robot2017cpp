@@ -1,6 +1,7 @@
 #include "Subsystems/Claw.h"
 
 #include <LiveWindow/LiveWindow.h>
+#include "Piston.h"
 
 Claw::Claw() :
 	frc::Subsystem("Claw") {

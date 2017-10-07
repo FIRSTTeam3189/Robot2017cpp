@@ -1,15 +1,13 @@
 #include "OpenClaw.h"
 
-#include "Robot.h"
-
 OpenClaw::OpenClaw() :
-		frc::Command("OpenClaw") {
-	Requires(Robot::claw.get());
+	CommandBase("OpenClaw") {
+	//Requires(Robot::claw.get());
 }
 
 // Called just before this Command runs the first time
 void OpenClaw::Initialize() {
-	Robot::claw->Open();
+	//Robot::claw->Open();
 }
 
 // Make this return true when this Command no longer needs to run execute()

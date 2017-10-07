@@ -1,12 +1,12 @@
 #ifndef TankDriveWithJoystick_H
 #define TankDriveWithJoystick_H
 
-#include <Commands/Command.h>
+#include <CommandBase.h>
 
 /**
  * Have the robot drive tank style using the PS3 Joystick until interrupted.
  */
-class TankDriveWithJoystick: public frc::Command {
+class TankDriveWithJoystick: public CommandBase {
 public:
 	TankDriveWithJoystick();
 	void Execute() override;

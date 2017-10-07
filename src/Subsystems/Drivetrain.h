@@ -7,7 +7,7 @@
 #include <Encoder.h>
 #include <RobotDrive.h>
 #include <Talon.h>
-#include <TalonSRX.h>
+#include <CANTalon.h>
 #include "RobotMap.h"
 
 /**
@@ -15,9 +15,9 @@
  * the robots chassis. These include four drive motors, a left and right encoder
  * and a gyro.
  */
-class DriveTrain: public frc::Subsystem {
+class Drivetrain: public frc::Subsystem {
 public:
-	DriveTrain();
+	Drivetrain();
 
 	/**
 	 * When no other command is running let the operator drive around
@@ -62,13 +62,15 @@ public:
 	 */
 	double GetDistanceToObstacle();
 
+	void InitHardware();
+
 private:
-	TalonSRX frontLeft { DRIVE_LEFT_FRONT };
-	TalonSRX middleLeft { DRIVE_LEFT_MIDDLE };
-	TalonSRX rearLeft { DRIVE_LEFT_BACK };
-	TalonSRX frontRight { DRIVE_RIGHT_FRONT };
-	TalonSRX middleRight { DRIVE_RIGHT_MIDDLE };
-	TalonSRX rearRight { DRIVE_RIGHT_BACK };
+	CANTalon* frontLeft;
+	CANTalon* middleLeft;
+	CANTalon* rearLeft;
+	CANTalon* frontRight;
+	CANTalon* middleRight;
+	CANTalon* rearRight;
 	//frc::Encoder leftEncoder { 1, 2 };
 	//frc::Encoder rightEncoder { 3, 4 };
 	//frc::AnalogInput rangefinder { 6 };

@@ -1,15 +1,13 @@
 #include "TankDriveWithJoystick.h"
 
-#include "Robot.h"
-
 TankDriveWithJoystick::TankDriveWithJoystick() :
-		frc::Command("TankDriveWithJoystick") {
-	Requires(Robot::drivetrain.get());
+	CommandBase("TankDriveWithJoystick") {
+	Requires(drivetrain.get());
 }
 
 // Called repeatedly when this Command is scheduled to run
 void TankDriveWithJoystick::Execute() {
-	//Robot::drivetrain->Drive(Robot::oi);
+	drivetrain->Drive(oi->GetLeftY(), oi->GetRightY());
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -19,5 +17,5 @@ bool TankDriveWithJoystick::IsFinished() {
 
 // Called once after isFinished returns true
 void TankDriveWithJoystick::End() {
-	Robot::drivetrain->Stop();
+	drivetrain->Stop();
 }
