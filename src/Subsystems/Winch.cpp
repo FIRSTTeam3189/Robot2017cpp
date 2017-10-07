@@ -11,7 +11,11 @@ void Winch::InitDefaultCommand() {
 }
 
 void Winch::Drive(double speed){
-	motors.Set(speed);
+	motors->Set(speed);
+}
+
+void Winch::InitHardware(){
+	motors = new Spark(0);
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

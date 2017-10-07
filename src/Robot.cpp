@@ -13,6 +13,7 @@
 
 void Robot::RobotInit() {
 	CommandBase::drivetrain.get()->InitHardware();
+	CommandBase::winch.get()->InitHardware();
 
 	chooser.AddDefault("Default Auto", new Autonomous());
 	// chooser.AddObject("My Auto", new MyAutoCommand());

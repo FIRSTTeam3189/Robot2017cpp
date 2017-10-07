@@ -6,12 +6,13 @@
 
 class Winch : public Subsystem {
 private:
-	frc::Spark motors { 0 };
+	frc::Spark* motors;
 
 public:
 	Winch();
 	void InitDefaultCommand();
 	void Drive(double speed);
+	void InitHardware();
 };
 
 #endif  // Winch_H
