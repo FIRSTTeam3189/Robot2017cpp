@@ -14,6 +14,11 @@
 void Robot::RobotInit() {
 	CommandBase::drivetrain.get()->InitHardware();
 	CommandBase::winch.get()->InitHardware();
+	CommandBase::dropper.get()->InitHardware();
+
+	c = new Compressor(0);
+
+	c->SetClosedLoopControl(true);
 
 	chooser.AddDefault("Default Auto", new Autonomous());
 	// chooser.AddObject("My Auto", new MyAutoCommand());

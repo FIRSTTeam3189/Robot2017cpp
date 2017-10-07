@@ -1,8 +1,8 @@
 #ifndef ROBOTMAP_H
 #define ROBOTMAP_H
 
-constexpr int CLAW_EXTEND = 0;
-constexpr int CLAW_RETRACT = 1;
+constexpr int CLAW_EXTEND = 2;
+constexpr int CLAW_RETRACT = 3;
 
 constexpr int DRIVE_RIGHT_FRONT = 4;
 constexpr int DRIVE_RIGHT_MIDDLE = 5;

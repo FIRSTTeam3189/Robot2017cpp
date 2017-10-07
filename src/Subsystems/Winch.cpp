@@ -2,7 +2,7 @@
 #include "../RobotMap.h"
 #include "Commands/WinchControl.h"
 
-Winch::Winch() : frc::Subsystem("ExampleSubsystem") {
+Winch::Winch() : frc::Subsystem("Winch") {
 
 }
 

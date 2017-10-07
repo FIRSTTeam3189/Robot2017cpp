@@ -7,9 +7,9 @@
  * Opens the claw for one second. Real robots should use sensors, stalling
  * motors is BAD!
  */
-class CloseClaw: public CommandBase {
+class DropperClose: public CommandBase {
 public:
-	CloseClaw();
+	DropperClose();
 	void Initialize() override;
 	bool IsFinished() override;
 	void End() override;

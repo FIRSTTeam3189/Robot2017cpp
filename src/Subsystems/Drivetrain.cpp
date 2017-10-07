@@ -6,7 +6,7 @@
 #include "RobotMap.h"
 
 Drivetrain::Drivetrain() :
-	frc::Subsystem("DriveTrain") {
+	frc::Subsystem("Drivetrain") {
 
 }
 

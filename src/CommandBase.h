@@ -5,6 +5,7 @@
 #include <string>
 
 #include <Commands/Command.h>
+#include <Subsystems/Dropper.h>
 
 #include "OI.h"
 #include "Subsystems/Drivetrain.h"
@@ -24,6 +25,7 @@ public:
 	static std::unique_ptr<Drivetrain> drivetrain;
 	static std::unique_ptr<Winch> winch;
 	static std::unique_ptr<OI> oi;
+	static std::unique_ptr<Dropper> dropper;
 };
 
 #endif  // COMMAND_BASE_H

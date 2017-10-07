@@ -12,9 +12,9 @@
  * If using stronger motors, you should probably use a sensor so that the
  * motors don't stall.
  */
-class Claw: public frc::Subsystem {
+class Dropper: public frc::Subsystem {
 public:
-	Claw();
+	Dropper();
 
 	void InitDefaultCommand() override;
 
@@ -34,10 +34,12 @@ public:
 	 */
 	bool IsGripping();
 
+	void InitHardware();
+
 	void Log();
 
 private:
-	Piston piston {CLAW_EXTEND, CLAW_RETRACT, true};
+	Piston* piston;
 };
 
 #endif  // Claw_H
