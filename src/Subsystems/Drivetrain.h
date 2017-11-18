@@ -7,7 +7,7 @@
 #include <Encoder.h>
 #include <RobotDrive.h>
 #include <Talon.h>
-#include <CANTalon.h>
+#include <TalonSRX.h>
 #include "RobotMap.h"
 
 /**
@@ -65,12 +65,12 @@ public:
 	void InitHardware();
 
 private:
-	CANTalon* frontLeft;
-	CANTalon* middleLeft;
-	CANTalon* rearLeft;
-	CANTalon* frontRight;
-	CANTalon* middleRight;
-	CANTalon* rearRight;
+	TalonSRX* frontLeft;
+	TalonSRX* middleLeft;
+	TalonSRX* rearLeft;
+	TalonSRX* frontRight;
+	TalonSRX* middleRight;
+	TalonSRX* rearRight;
 	//frc::Encoder leftEncoder { 1, 2 };
 	//frc::Encoder rightEncoder { 3, 4 };
 	//frc::AnalogInput rangefinder { 6 };

@@ -65,12 +65,12 @@ double Drivetrain::GetDistanceToObstacle() {
 }
 
 void Drivetrain::InitHardware(){
-	frontLeft = new CANTalon(DRIVE_LEFT_FRONT);
-	middleLeft = new CANTalon(DRIVE_LEFT_MIDDLE);
-	rearLeft = new CANTalon(DRIVE_LEFT_BACK);
-	frontRight = new CANTalon(DRIVE_RIGHT_FRONT);
-	middleRight = new CANTalon(DRIVE_RIGHT_MIDDLE);
-	rearRight = new CANTalon(DRIVE_RIGHT_BACK);
+	frontLeft = new TalonSRX(DRIVE_LEFT_FRONT);
+	middleLeft = new TalonSRX(DRIVE_LEFT_MIDDLE);
+	rearLeft = new TalonSRX(DRIVE_LEFT_BACK);
+	frontRight = new TalonSRX(DRIVE_RIGHT_FRONT);
+	middleRight = new TalonSRX(DRIVE_RIGHT_MIDDLE);
+	rearRight = new TalonSRX(DRIVE_RIGHT_BACK);
 
 	frontLeft->SetInverted(true);
 	middleLeft->SetInverted(true);
