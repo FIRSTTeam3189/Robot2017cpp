@@ -4,10 +4,12 @@
 #include <AnalogGyro.h>
 #include <AnalogInput.h>
 #include <Commands/Subsystem.h>
+#include <ctrlib/CANTalon.h>
 #include <Encoder.h>
 #include <RobotDrive.h>
 #include <Talon.h>
 #include <TalonSRX.h>
+#include "WPILib.h"
 #include "RobotMap.h"
 
 /**
@@ -65,12 +67,13 @@ public:
 	void InitHardware();
 
 private:
-	TalonSRX* frontLeft;
-	TalonSRX* middleLeft;
-	TalonSRX* rearLeft;
-	TalonSRX* frontRight;
-	TalonSRX* middleRight;
-	TalonSRX* rearRight;
+	CANTalon* frontLeft;
+	CANTalon* middleLeft;
+	CANTalon* rearLeft;
+	CANTalon* frontRight;
+	CANTalon* middleRight;
+	CANTalon* rearRight;
+
 	//frc::Encoder leftEncoder { 1, 2 };
 	//frc::Encoder rightEncoder { 3, 4 };
 	//frc::AnalogInput rangefinder { 6 };

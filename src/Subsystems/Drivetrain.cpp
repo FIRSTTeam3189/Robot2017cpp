@@ -1,6 +1,7 @@
 #include <Joystick.h>
 #include <LiveWindow/LiveWindow.h>
 #include <Subsystems/Drivetrain.h>
+#include <iostream>
 
 #include "Commands/TankDriveWithJoystick.h"
 #include "RobotMap.h"
@@ -33,6 +34,8 @@ void Drivetrain::Drive(double left, double right) {
 	frontRight->Set(right);
 	middleRight->Set(right);
 	rearRight->Set(right);
+
+	std::cout << "FL: " << frontLeft->Get() << "FR: " << frontRight->Get() << std::endl;
 }
 
 void Drivetrain::Stop(){
@@ -65,12 +68,19 @@ double Drivetrain::GetDistanceToObstacle() {
 }
 
 void Drivetrain::InitHardware(){
-	frontLeft = new TalonSRX(DRIVE_LEFT_FRONT);
-	middleLeft = new TalonSRX(DRIVE_LEFT_MIDDLE);
-	rearLeft = new TalonSRX(DRIVE_LEFT_BACK);
-	frontRight = new TalonSRX(DRIVE_RIGHT_FRONT);
-	middleRight = new TalonSRX(DRIVE_RIGHT_MIDDLE);
-	rearRight = new TalonSRX(DRIVE_RIGHT_BACK);
+	frontLeft = new CANTalon(DRIVE_LEFT_FRONT);
+	middleLeft = new CANTalon(DRIVE_LEFT_MIDDLE);
+	rearLeft = new CANTalon(DRIVE_LEFT_BACK);
+	frontRight = new CANTalon(DRIVE_RIGHT_FRONT);
+	middleRight = new CANTalon(DRIVE_RIGHT_MIDDLE);
+	rearRight = new CANTalon(DRIVE_RIGHT_BACK);
+
+	frontLeft->SetSafetyEnabled(false);
+	middleLeft->SetSafetyEnabled(false);
+	rearLeft->SetSafetyEnabled(false);
+	frontRight->SetSafetyEnabled(false);
+	middleRight->SetSafetyEnabled(false);
+	rearRight->SetSafetyEnabled(false);
 
 	frontLeft->SetInverted(true);
 	middleLeft->SetInverted(true);
