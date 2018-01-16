@@ -10,6 +10,9 @@
 #include <ctre/phoenix/MotorControl/ControlMode.h>
 #include "RobotMap.h"
 
+using TalonSRX = ctre::phoenix::motorcontrol::can::TalonSRX;
+using ControlMode = ctre::phoenix::motorcontrol::ControlMode;
+
 /**
  * The DriveTrain subsystem incorporates the sensors and actuators attached to
  * the robots chassis. These include four drive motors, a left and right encoder
@@ -65,12 +68,12 @@ public:
 	void InitHardware();
 
 private:
-	ctre::phoenix::motorcontrol::can::TalonSRX* frontLeft;
-	ctre::phoenix::motorcontrol::can::TalonSRX* middleLeft;
-	ctre::phoenix::motorcontrol::can::TalonSRX* rearLeft;
-	ctre::phoenix::motorcontrol::can::TalonSRX* frontRight;
-	ctre::phoenix::motorcontrol::can::TalonSRX* middleRight;
-	ctre::phoenix::motorcontrol::can::TalonSRX* rearRight;
+	TalonSRX* frontLeft;
+	TalonSRX* middleLeft;
+	TalonSRX* rearLeft;
+	TalonSRX* frontRight;
+	TalonSRX* middleRight;
+	TalonSRX* rearRight;
 	//frc::Encoder leftEncoder { 1, 2 };
 	//frc::Encoder rightEncoder { 3, 4 };
 	//frc::AnalogInput rangefinder { 6 };

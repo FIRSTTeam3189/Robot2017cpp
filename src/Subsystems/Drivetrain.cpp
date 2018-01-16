@@ -28,21 +28,21 @@ void Drivetrain::Log() {
 }
 
 void Drivetrain::Drive(double left, double right) {
-	frontLeft->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, left);
-	middleLeft->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, left);
-	rearLeft->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, left);
-	frontRight->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, right);
-	middleRight->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, right);
-	rearRight->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, right);
+	frontLeft->Set(ControlMode::PercentOutput, left);
+	middleLeft->Set(ControlMode::PercentOutput, left);
+	rearLeft->Set(ControlMode::PercentOutput, left);
+	frontRight->Set(ControlMode::PercentOutput, right);
+	middleRight->Set(ControlMode::PercentOutput, right);
+	rearRight->Set(ControlMode::PercentOutput, right);
 }
 
 void Drivetrain::Stop(){
-	frontLeft->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
-	middleLeft->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
-	rearLeft->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
-	frontRight->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
-	middleRight->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
-	rearRight->Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, 0.0);
+	frontLeft->Set(ControlMode::PercentOutput, 0.0);
+	middleLeft->Set(ControlMode::PercentOutput, 0.0);
+	rearLeft->Set(ControlMode::PercentOutput, 0.0);
+	frontRight->Set(ControlMode::PercentOutput, 0.0);
+	middleRight->Set(ControlMode::PercentOutput, 0.0);
+	rearRight->Set(ControlMode::PercentOutput, 0.0);
 }
 
 //NOT INMPLEMENTED
@@ -66,12 +66,12 @@ double Drivetrain::GetDistanceToObstacle() {
 }
 
 void Drivetrain::InitHardware(){
-	frontLeft = new ctre::phoenix::motorcontrol::can::TalonSRX(DRIVE_LEFT_FRONT);
-	middleLeft = new ctre::phoenix::motorcontrol::can::TalonSRX(DRIVE_LEFT_MIDDLE);
-	rearLeft = new ctre::phoenix::motorcontrol::can::TalonSRX(DRIVE_LEFT_BACK);
-	frontRight = new ctre::phoenix::motorcontrol::can::TalonSRX(DRIVE_RIGHT_FRONT);
-	middleRight = new ctre::phoenix::motorcontrol::can::TalonSRX(DRIVE_RIGHT_MIDDLE);
-	rearRight = new ctre::phoenix::motorcontrol::can::TalonSRX(DRIVE_RIGHT_BACK);
+	frontLeft = new TalonSRX(DRIVE_LEFT_FRONT);
+	middleLeft = new TalonSRX(DRIVE_LEFT_MIDDLE);
+	rearLeft = new TalonSRX(DRIVE_LEFT_BACK);
+	frontRight = new TalonSRX(DRIVE_RIGHT_FRONT);
+	middleRight = new TalonSRX(DRIVE_RIGHT_MIDDLE);
+	rearRight = new TalonSRX(DRIVE_RIGHT_BACK);
 
 	frontLeft->SetInverted(true);
 	middleLeft->SetInverted(true);
