@@ -3,9 +3,6 @@
 
 #include <CommandBase.h>
 
-/**
- * Have the robot drive tank style using the PS3 Joystick until interrupted.
- */
 class TankDriveWithJoystick: public CommandBase {
 public:
 	TankDriveWithJoystick();

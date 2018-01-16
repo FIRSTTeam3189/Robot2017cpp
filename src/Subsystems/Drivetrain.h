@@ -6,8 +6,8 @@
 #include <Commands/Subsystem.h>
 #include <Encoder.h>
 #include <RobotDrive.h>
-#include <Talon.h>
-#include <TalonSRX.h>
+#include <ctre/phoenix/MotorControl/CAN/TalonSRX.h>
+#include <ctre/phoenix/MotorControl/ControlMode.h>
 #include "RobotMap.h"
 
 /**
@@ -65,12 +65,12 @@ public:
 	void InitHardware();
 
 private:
-	TalonSRX* frontLeft;
-	TalonSRX* middleLeft;
-	TalonSRX* rearLeft;
-	TalonSRX* frontRight;
-	TalonSRX* middleRight;
-	TalonSRX* rearRight;
+	ctre::phoenix::motorcontrol::can::TalonSRX* frontLeft;
+	ctre::phoenix::motorcontrol::can::TalonSRX* middleLeft;
+	ctre::phoenix::motorcontrol::can::TalonSRX* rearLeft;
+	ctre::phoenix::motorcontrol::can::TalonSRX* frontRight;
+	ctre::phoenix::motorcontrol::can::TalonSRX* middleRight;
+	ctre::phoenix::motorcontrol::can::TalonSRX* rearRight;
 	//frc::Encoder leftEncoder { 1, 2 };
 	//frc::Encoder rightEncoder { 3, 4 };
 	//frc::AnalogInput rangefinder { 6 };

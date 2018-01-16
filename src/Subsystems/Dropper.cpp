@@ -27,5 +27,5 @@ void Dropper::InitHardware(){
 }
 
 void Dropper::Log() {
-	frc::SmartDashboard::PutBoolean("Claw Open", piston->IsExtended());
+	//frc::SmartDashboard::PutBoolean("Claw Open", piston->IsExtended());
 }
