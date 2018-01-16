@@ -7,6 +7,10 @@
 #include "Commands/DropperOpen.h"
 
 OI::OI() {
+
+}
+
+void OI::Init() {
 	copilot_2 = new JoystickButton(&copilot, 2);
 	copilot_3 = new JoystickButton(&copilot, 3);
 
@@ -15,11 +19,11 @@ OI::OI() {
 }
 
 double OI::GetLeftY(){
-	return left.GetY(frc::GenericHID::JoystickHand::kLeftHand);
+	return left.GetY();
 }
 
 double OI::GetRightY(){
-	return right.GetY(frc::GenericHID::JoystickHand::kRightHand);
+	return right.GetY();
 }
 
 double OI::GetCoPilotY(){

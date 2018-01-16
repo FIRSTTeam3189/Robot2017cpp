@@ -7,6 +7,7 @@
 class OI {
 public:
 	OI();
+	void Init();
 	double GetLeftY();
 	double GetRightY();
 	double GetCoPilotY();

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "TankDriveWithJoystick.h"
 
 TankDriveWithJoystick::TankDriveWithJoystick() :
@@ -7,6 +8,7 @@ TankDriveWithJoystick::TankDriveWithJoystick() :
 
 // Called repeatedly when this Command is scheduled to run
 void TankDriveWithJoystick::Execute() {
+	std::cout << "Right: " << oi->GetRightY() << " Left: " << oi->GetLeftY() << std::endl;
 	drivetrain->Drive(oi->GetLeftY(), oi->GetRightY());
 }
 

@@ -12,9 +12,10 @@
 #include "CommandBase.h"
 
 void Robot::RobotInit() {
-	CommandBase::drivetrain.get()->InitHardware();
-	CommandBase::winch.get()->InitHardware();
-	CommandBase::dropper.get()->InitHardware();
+	CommandBase::drivetrain->InitHardware();
+	CommandBase::winch->InitHardware();
+	CommandBase::dropper->InitHardware();
+	CommandBase::oi->Init();
 
 	c = new Compressor(0);
 
@@ -80,6 +81,7 @@ void Robot::TeleopInit() {
 
 void Robot::TeleopPeriodic() {
 	frc::Scheduler::GetInstance()->Run();
+	SmartDashboard::PutData(CommandBase::drivetrain.get());
 }
 
 void Robot::TestPeriodic() {
